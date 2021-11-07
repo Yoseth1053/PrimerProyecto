@@ -6,7 +6,7 @@ namespace MiPrimeraApp.Console
     {
         static void Main(string[] args)
         {
-           Console.WriteLine("Bienvenidos Al 4 de noviembre");
+           
         }
     }
 }
