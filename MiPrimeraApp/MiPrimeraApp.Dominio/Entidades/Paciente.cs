@@ -12,7 +12,7 @@ namespace MiPrimeraApp.Dominio
         public List<SignoVital> SignosVitales {get; set;}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if(optionsBuilder.IsConfigured)
+            if(!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer("Inital catalog=HospitalAdsi2207208; DataSource=DESKTOP-G6077QO;  Integrated Security=true");
                 /*initial cataloh : Nombre de base de datos
