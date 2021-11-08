@@ -13,7 +13,7 @@ namespace MiPrimeraApp.Persistencia
         {
             if(!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Initial catalog=HospitalAdsi2207208; Data Source=DESKTOP-G6077QO;  Integrated Security=true");
+                optionsBuilder.UseSqlServer("Initial catalog=HospitalAdsi2207208; Data Source=DESKTOP-G6077QO\\SQLEXPRESS;  Integrated Security=true");
                 // .UseSqlServer(" Data Source = (localdb)\\DESKTOP-G6077QO; Initial catalog=Hospital2207208;");
                 
                 /*initial cataloh : Nombre de base de datos
