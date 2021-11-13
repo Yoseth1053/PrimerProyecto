@@ -7,16 +7,21 @@ namespace MiPrimeraApp.Persistencia
 {
     public class RepositorioPaciente : IRepositorioPaciente
     {
-        private readonly AppContext _appContex = new AppContext(); 
+        private readonly AppContext _appContext = new AppContext(); 
         Paciente IRepositorioPaciente.AddPaciente(Paciente paciente)
         {
-            var pacienteAdicionado = _appContex.Pacientes.Add(paciente);
-            _appContex.SaveChanges();
+            var pacienteAdicionado = _appContext.Pacientes.Add(paciente);
+            _appContext.SaveChanges();
             return pacienteAdicionado.Entity;
         }
-        IEnumerable<Paciente> IRepositorioPaciente.GetAllpacientes()
+        IEnumerable<Paciente> IRepositorioPaciente.GetAllPacientes()
         {
-            return _appContex.pacientes;
+            return _appContext.Pacientes;
+        }
+
+        Paciente IRepositorioPaciente.GetPaciente(int idPaciente)
+        {
+            return _appContext.Pacientes.Find(idPaciente);
         }
     }
 }

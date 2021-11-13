@@ -8,39 +8,46 @@ namespace MiPrimeraApp.Console
      
     class Program
     {
-        private static IRepositorioPaciente _Repopaciente = new RepositorioPaciente();
+        private static IRepositorioPaciente _repoPaciente = new RepositorioPaciente();
         static void Main(string[] args)
         {
-            
+            Console.WriteLine(" Bienvenidos 9 Noviembre");
             //AddPaciente();
-            MostrarPacientes();
+            //MostrarPacientes();
+            //BuscarPacientes();
            
         }
-         private void AddPaciente()
+         private static void AddPaciente()
          {
              var paciente = new Paciente
              {
                  Nombre= "pepito",
                  Apellidos="perez",
-                 NumTelefono="60688888",
+                 NumeroTelefono="60688888",
                  Genero=Genero.Masculino,
                  Direccion="Calle 18 n 1-2",
                  Ciudad="Manizales",
-                 FechadeNacimiento= new DateTime(1994,04,12)
+                 FechaNacimiento= new DateTime(1994,04,12)
              };
-             _RepoPaciente.AddPaciente(paciente);
+             _repoPaciente.AddPaciente(paciente);
 
          }
-         private void MostrarPacientes()
+         private static void MostrarPaciente()
          {
-             IEnumerable<Paciente> pacientes = RepoPaciente.GetAllpacientes();
-        {
-            return _appContex.pacientes;
+             IEnumerable<Paciente> pacientes = _repoPaciente.GetAllPacientes();
+        
             foreach (var paciente in pacientes)
             {
-                Console.WriteLine(paciente.Nombre+""+paciente.Apellidos+""+paciente.Genero);
+                Console.WriteLine(paciente.Nombre+" "+paciente.Apellidos+" "+paciente.Genero);
             }
-        }
          }
+            
+            private static void BuscarPaciente(int idPaciente)
+            {
+                var paciente  = _repoPaciente.GetPaciente(idPaciente);
+                Console.WriteLine(paciente.Nombre+" "+paciente.Apellidos+" "+paciente.Genero);
+            }
+        
+         
     }
 }
