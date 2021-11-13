@@ -12,6 +12,7 @@ namespace MiPrimeraApp.Console
         static void Main(string[] args)
         {
             Console.WriteLine(" Bienvenidos 9 Noviembre");
+            Console.ReadKey();
             //AddPaciente();
             //MostrarPacientes();
             //BuscarPacientes();
